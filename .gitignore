@@ -1,0 +1,12 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor state (workspace settings in .vscode/ ARE committed on purpose)
+*.swp
+*.swo
+
+# Dependencies / build output (if you add tooling later)
+node_modules/
+dist/

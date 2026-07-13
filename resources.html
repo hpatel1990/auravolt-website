@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — Auravolt</title>
+<meta name="description" content="Engineering write-ups, company news, and technical white papers from the Auravolt team.">
+<link rel="icon" type="image/png" href="images/symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="resources">
+
+<!-- ============================================================
+     SITE HEADER — shared across all pages.
+     To change it: edit partials/header.html, then run
+       python tools/sync_partials.py
+     (or edit here and copy to the other pages by hand)
+============================================================ -->
+<!-- HEADER:BEGIN -->
+<header id="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Auravolt home">
+      <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+      <img class="word" src="images/wordmark-dark.png" alt="Auravolt">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="technology.html" data-nav="technology">Technology</a></li>
+      <li class="has-drop">
+        <a href="product-manufacturers.html" data-nav-group="solutions">Solutions</a>
+        <ul class="drop">
+          <li><a href="product-manufacturers.html" data-nav="product-manufacturers">Product Manufacturers</a></li>
+          <li><a href="battery-producers.html" data-nav="battery-producers">Battery Producers</a></li>
+        </ul>
+      </li>
+      <li class="has-drop">
+        <a href="critical-power.html" data-nav-group="industries">Industries</a>
+        <ul class="drop">
+          <li><a href="critical-power.html" data-nav="critical-power">Critical Power</a></li>
+          <li><a href="defense.html" data-nav="defense">Defense</a></li>
+          <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li class="has-drop">
+        <a href="about.html" data-nav-group="company">Company</a>
+        <ul class="drop">
+          <li><a href="about.html" data-nav="about">About Us</a></li>
+          <li><a href="careers.html" data-nav="careers">Careers</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main>
+<section class="page-hero on-dark">
+  <div class="container">
+    <img class="ph-mark" src="images/symbol.png" alt="" aria-hidden="true">
+    <div class="crumb"><a href="index.html">Home</a> / Resources</div>
+    <h1 class="display">Notes from the <span class="volt">bench</span></h1>
+    <p class="lede">Engineering write-ups, company news, and deeper technical papers. Placeholder entries shown — publish real content here as it's written.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="res-tabs reveal" role="tablist" aria-label="Filter resources">
+      <button class="res-tab active" data-filter="all">All</button>
+      <button class="res-tab" data-filter="blog">Blog</button>
+      <button class="res-tab" data-filter="news">News</button>
+      <button class="res-tab" data-filter="whitepaper">White papers</button>
+    </div>
+    <div class="res-grid" id="resGrid">
+      <a class="res-card reveal" href="resources.html" data-cat="blog">
+        <span class="cat">Blog</span>
+        <h3>[Placeholder] Choosing between LFP and sodium-ion for stationary backup</h3>
+        <p>A practical decision framework: cost per cycle, float behavior, temperature windows, and when energy density actually matters.</p>
+        <span class="date">Draft — replace with published date</span>
+      </a>
+      <a class="res-card reveal" href="resources.html" data-cat="news">
+        <span class="cat">News</span>
+        <h3>[Placeholder] Auravolt announces first cell partner</h3>
+        <p>Company announcement template — partner name, chemistry, target application, and quotes from both teams.</p>
+        <span class="date">Draft — replace with published date</span>
+      </a>
+      <a class="res-card reveal" href="resources.html" data-cat="whitepaper">
+        <span class="cat">White paper</span>
+        <h3>[Placeholder] The case for a battery integration layer</h3>
+        <p>A longer technical argument: why decoupling chemistry from product design lowers lifetime cost and derisks supply.</p>
+        <span class="date">Draft — replace with published date</span>
+      </a>
+      <a class="res-card reveal" href="resources.html" data-cat="blog">
+        <span class="cat">Blog</span>
+        <h3>[Placeholder] What state-of-health actually tells you (and what it doesn't)</h3>
+        <p>Demystifying SoH estimation methods, their error bars, and how to use them for replacement planning.</p>
+        <span class="date">Draft — replace with published date</span>
+      </a>
+      <a class="res-card reveal" href="resources.html" data-cat="news">
+        <span class="cat">News</span>
+        <h3>[Placeholder] Auravolt opens its integration lab</h3>
+        <p>Milestone announcement template — facility, capabilities, and what it means for customer projects.</p>
+        <span class="date">Draft — replace with published date</span>
+      </a>
+      <a class="res-card reveal" href="resources.html" data-cat="whitepaper">
+        <span class="cat">White paper</span>
+        <h3>[Placeholder] Telemetry-first pack design</h3>
+        <p>How designing for data from day one changes warranty economics and unlocks predictive maintenance.</p>
+        <span class="date">Draft — replace with published date</span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     SITE FOOTER — shared across all pages.
+     To change it: edit partials/footer.html, then run
+       python tools/sync_partials.py
+============================================================ -->
+<!-- FOOTER:BEGIN -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+        <img class="word" src="images/wordmark-white.png" alt="Auravolt">
+        <p>Custom battery integration today. AI-driven energy intelligence next.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Subscribed ✓';">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn-solid" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="product-manufacturers.html">Product manufacturers</a></li>
+          <li><a href="battery-producers.html">Battery producers</a></li>
+        </ul>
+        <h4 style="margin-top:1.6rem">Industries</h4>
+        <ul>
+          <li><a href="critical-power.html">Critical power</a></li>
+          <li><a href="defense.html">Defense</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Technology</h4>
+        <ul>
+          <li><a href="technology.html">Integration Core</a></li>
+          <li><a href="index.html">Roadmap</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources.html">Blog</a></li>
+          <li><a href="resources.html">White papers</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Get in touch</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Auravolt Corp. 2026 — auravolt.ai</span>
+      <span><a href="mailto:connect@auravolt.ai">connect@auravolt.ai</a></span>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+
+<script src="js/script.js"></script>
+</body>
+</html>

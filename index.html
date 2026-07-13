@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auravolt — Power, engineered around your product</title>
+<meta name="description" content="Auravolt builds custom battery integration solutions that free products from fixed chemistry constraints — with an AI-driven energy intelligence platform on the roadmap.">
+<link rel="icon" type="image/png" href="images/symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="home">
+
+<!-- ============================================================
+     SITE HEADER — shared across all pages.
+     To change it: edit partials/header.html, then run
+       python tools/sync_partials.py
+     (or edit here and copy to the other pages by hand)
+============================================================ -->
+<!-- HEADER:BEGIN -->
+<header id="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Auravolt home">
+      <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+      <img class="word" src="images/wordmark-dark.png" alt="Auravolt">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="technology.html" data-nav="technology">Technology</a></li>
+      <li class="has-drop">
+        <a href="product-manufacturers.html" data-nav-group="solutions">Solutions</a>
+        <ul class="drop">
+          <li><a href="product-manufacturers.html" data-nav="product-manufacturers">Product Manufacturers</a></li>
+          <li><a href="battery-producers.html" data-nav="battery-producers">Battery Producers</a></li>
+        </ul>
+      </li>
+      <li class="has-drop">
+        <a href="critical-power.html" data-nav-group="industries">Industries</a>
+        <ul class="drop">
+          <li><a href="critical-power.html" data-nav="critical-power">Critical Power</a></li>
+          <li><a href="defense.html" data-nav="defense">Defense</a></li>
+          <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li class="has-drop">
+        <a href="about.html" data-nav-group="company">Company</a>
+        <ul class="drop">
+          <li><a href="about.html" data-nav="about">About Us</a></li>
+          <li><a href="careers.html" data-nav="careers">Careers</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main>
+<section class="hero on-dark" style="padding:0">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Custom battery integration</div>
+        <h1 class="display">Power, engineered <span class="volt">around your product</span></h1>
+        <p class="lede">Auravolt designs and builds custom battery integration solutions — matching the right cells, management, and interfaces to your product instead of forcing your product to fit the battery.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-solid" href="contact.html">Start a project</a>
+          <a class="btn btn-ghost" href="technology.html">See how it works</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="chev-stack">
+          <img class="chev-top" src="images/symbol.png" alt="">
+          <img class="chev-bottom" src="images/symbol.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">Cell-agnostic <b>design</b></span>
+      <span class="tag">Safety-first <b>engineering</b></span>
+      <span class="tag">AI-ready <b>architecture</b></span>
+      <span class="tag">Built in <b>California</b></span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2 class="display">Freeing products from fixed battery constraints</h2>
+      <p>Most products are designed around whatever battery format was available at the time — and stay locked to it. Auravolt reverses that relationship.</p>
+    </div>
+    <div class="fromto">
+      <div class="ft-card ft-from reveal">
+        <span class="label">From</span>
+        <h3>One chemistry, one format, one ceiling</h3>
+        <p>Off-the-shelf packs force compromises on runtime, weight, charge speed, and safety margins. Switching cells later means redesign, requalification, and months of lost time.</p>
+      </div>
+      <div class="ft-card ft-to reveal">
+        <span class="label">To</span>
+        <h3>Integration built around your requirements</h3>
+        <p>We engineer the pack, battery management, thermal design, and product interface as one system — so you can adopt the best cell for the job today, and swap in better chemistry tomorrow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band on-dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">How we do it</div>
+      <h2 class="display">The Auravolt Integration Core</h2>
+      <p>A modular hardware-and-software layer that sits between cells and product — handling monitoring, protection, balancing, and communication so your device just sees clean, reliable power.</p>
+    </div>
+    <div class="cards-4">
+      <div class="p-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3v4M16 3v4M6 7h12v6a6 6 0 0 1-12 0zM12 19v2"/></svg></div>
+        <h3>Cell-agnostic by design</h3>
+        <p>Work with lithium-ion, LFP, sodium-ion, or emerging chemistries without re-architecting your product.</p>
+      </div>
+      <div class="p-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></div>
+        <h3>Optimized performance</h3>
+        <p>Precision state-of-charge and state-of-health tracking gets more usable energy out of every pack, safely.</p>
+      </div>
+      <div class="p-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 12h6M14 12h6M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0zM12 4v4M12 16v4"/></svg></div>
+        <h3>Seamless integration</h3>
+        <p>Standard electrical and data interfaces cut integration time from months to weeks — no recertification spiral.</p>
+      </div>
+      <div class="p-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9M17 3l4 4M21 3l-4 4M12 8v4l3 2"/></svg></div>
+        <h3>AI-ready architecture</h3>
+        <p>Every pack streams telemetry from day one — the foundation for the predictive intelligence on our roadmap.</p>
+      </div>
+    </div>
+    <div style="margin-top:2.4rem" class="reveal"><a class="btn btn-ghost" href="technology.html">Explore the technology</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Where we're headed</div>
+      <h2 class="display">Batteries first. Intelligence next.</h2>
+      <p>Auravolt is building in deliberate phases: earn trust with hardware that ships, then leverage the data layer that hardware creates.</p>
+    </div>
+    <div class="roadmap">
+      <div class="phase now reveal">
+        <span class="status">Now</span>
+        <span class="ph">Phase 01</span>
+        <h3>Custom battery integration</h3>
+        <p>Engineering services and integration hardware for product manufacturers who need power designed around their device.</p>
+        <ul>
+          <li>Pack design, BMS, and thermal engineering</li>
+          <li>Prototyping through production support</li>
+          <li>Certification and safety guidance</li>
+        </ul>
+      </div>
+      <div class="phase next reveal">
+        <span class="status">Next</span>
+        <span class="ph">Phase 02</span>
+        <h3>AI-driven energy intelligence</h3>
+        <p>Software built on live fleet telemetry from deployed Auravolt systems — turning battery data into operating advantage.</p>
+        <ul>
+          <li>Predictive health and failure forecasting</li>
+          <li>Adaptive charging and load optimization</li>
+          <li>Fleet analytics and warranty intelligence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why now</div>
+      <h2 class="display">A market moving our direction</h2>
+      <p>Electrification is outpacing the industry's ability to integrate batteries well. Third-party analysts expect the battery management layer to grow several times over this decade.</p>
+    </div>
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="num">$8.5B <em>→ $31.3B</em></div>
+        <div class="what">Projected global battery management system market growth, 2024 to 2030 (≈25% CAGR).</div>
+        <div class="src">Source: Grand View Research</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num"><em>~31%</em> CAGR</div>
+        <div class="what">Stationary energy storage is the fastest-growing BMS application segment through 2031.</div>
+        <div class="src">Source: Mordor Intelligence</div>
+      </div>
+      <div class="stat reveal">
+        <div class="num"><em>30M+</em> BEVs</div>
+        <div class="what">Projected annual battery-electric vehicle sales by 2027, up from 13.9M in 2024 — every one needs an integration layer.</div>
+        <div class="src">Source: Mordor Intelligence</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Who we serve</div>
+      <h2 class="display">Two sides of the same connection</h2>
+    </div>
+    <div class="serve">
+      <a class="serve-card a reveal" href="product-manufacturers.html">
+        <img class="bigmark" src="images/symbol.png" alt="" aria-hidden="true">
+        <div class="k">For product manufacturers</div>
+        <h3>Adopt better batteries without redesign</h3>
+        <p>Bring next-generation cells into your existing product line — we handle the integration, safety, and interface work.</p>
+        <span class="go">Learn more</span>
+      </a>
+      <a class="serve-card b reveal" href="battery-producers.html">
+        <img class="bigmark" src="images/symbol.png" alt="" aria-hidden="true">
+        <div class="k">For battery producers</div>
+        <h3>Reach markets your format can't</h3>
+        <p>Your chemistry, our integration layer — get deployed into real products without building custom packs for every customer.</p>
+        <span class="go">Learn more</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="partners">
+  <div class="container row">
+    <span class="k">Cell &amp; technology partners</span>
+    <span class="logo-slot">Partner logo</span>
+    <span class="logo-slot">Partner logo</span>
+    <span class="logo-slot">Partner logo</span>
+    <span class="logo-slot">Partner logo</span>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Testimonials</div>
+      <h2 class="display">What partners say</h2>
+      <p>Placeholder quotes — replace with real customer and partner statements as they come in.</p>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <blockquote>[Placeholder] "A short, specific quote about how Auravolt shortened an integration timeline or solved a hard power problem goes here."</blockquote>
+        <div class="who"><b>Name Surname</b>Title, Company</div>
+      </div>
+      <div class="quote reveal">
+        <blockquote>[Placeholder] "A quote from a battery producer about reaching a new market through Auravolt's integration layer goes here."</blockquote>
+        <div class="who"><b>Name Surname</b>Title, Company</div>
+      </div>
+      <div class="quote reveal">
+        <blockquote>[Placeholder] "A quote about reliability, safety, or working with the Auravolt team goes here."</blockquote>
+        <div class="who"><b>Name Surname</b>Title, Company</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-band on-dark reveal">
+      <img class="watermark" src="images/symbol.png" alt="" aria-hidden="true">
+      <div>
+        <div class="eyebrow">Ready to build?</div>
+        <h2 class="display">Let's engineer your power system</h2>
+        <p>Tell us about your product and its power requirements — we'll come back with an integration approach, a timeline, and a straight answer on feasibility.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-solid" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     SITE FOOTER — shared across all pages.
+     To change it: edit partials/footer.html, then run
+       python tools/sync_partials.py
+============================================================ -->
+<!-- FOOTER:BEGIN -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+        <img class="word" src="images/wordmark-white.png" alt="Auravolt">
+        <p>Custom battery integration today. AI-driven energy intelligence next.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Subscribed ✓';">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn-solid" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="product-manufacturers.html">Product manufacturers</a></li>
+          <li><a href="battery-producers.html">Battery producers</a></li>
+        </ul>
+        <h4 style="margin-top:1.6rem">Industries</h4>
+        <ul>
+          <li><a href="critical-power.html">Critical power</a></li>
+          <li><a href="defense.html">Defense</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Technology</h4>
+        <ul>
+          <li><a href="technology.html">Integration Core</a></li>
+          <li><a href="index.html">Roadmap</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources.html">Blog</a></li>
+          <li><a href="resources.html">White papers</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Get in touch</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Auravolt Corp. 2026 — auravolt.ai</span>
+      <span><a href="mailto:connect@auravolt.ai">connect@auravolt.ai</a></span>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+
+<script src="js/script.js"></script>
+</body>
+</html>

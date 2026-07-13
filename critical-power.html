@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critical Power — Auravolt</title>
+<meta name="description" content="Battery integration for UPS, backup, telecom, medical, and data infrastructure — power that cannot fail.">
+<link rel="icon" type="image/png" href="images/symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="critical-power">
+
+<!-- ============================================================
+     SITE HEADER — shared across all pages.
+     To change it: edit partials/header.html, then run
+       python tools/sync_partials.py
+     (or edit here and copy to the other pages by hand)
+============================================================ -->
+<!-- HEADER:BEGIN -->
+<header id="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Auravolt home">
+      <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+      <img class="word" src="images/wordmark-dark.png" alt="Auravolt">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="technology.html" data-nav="technology">Technology</a></li>
+      <li class="has-drop">
+        <a href="product-manufacturers.html" data-nav-group="solutions">Solutions</a>
+        <ul class="drop">
+          <li><a href="product-manufacturers.html" data-nav="product-manufacturers">Product Manufacturers</a></li>
+          <li><a href="battery-producers.html" data-nav="battery-producers">Battery Producers</a></li>
+        </ul>
+      </li>
+      <li class="has-drop">
+        <a href="critical-power.html" data-nav-group="industries">Industries</a>
+        <ul class="drop">
+          <li><a href="critical-power.html" data-nav="critical-power">Critical Power</a></li>
+          <li><a href="defense.html" data-nav="defense">Defense</a></li>
+          <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li class="has-drop">
+        <a href="about.html" data-nav-group="company">Company</a>
+        <ul class="drop">
+          <li><a href="about.html" data-nav="about">About Us</a></li>
+          <li><a href="careers.html" data-nav="careers">Careers</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main>
+<section class="page-hero on-dark">
+  <div class="container">
+    <img class="ph-mark" src="images/symbol.png" alt="" aria-hidden="true">
+    <div class="crumb"><a href="index.html">Home</a> / Industries / Critical Power</div>
+    <h1 class="display">Power that <span class="volt">cannot fail</span></h1>
+    <p class="lede">Backup systems, UPS, telecom sites, medical equipment, and data infrastructure — applications where the battery is the last line of defense, not an accessory.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="contact.html">Discuss your application</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why it matters</div>
+      <h2 class="display">The cost of downtime keeps rising</h2>
+      <p>Data-center buildouts are driving a rebound in industrial and telecom UPS demand, and grid-scale storage is the fastest-growing battery management segment — per Mordor Intelligence. Critical power operators increasingly expect packs with long service lives, deep monitoring, and honest state-of-health data.</p>
+    </div>
+    <div class="cards-4" style="grid-template-columns:repeat(4,1fr)">
+      <div class="l-card reveal"><h3>UPS &amp; backup</h3><p>Long-duration chemistries like LFP and sodium-ion, integrated for float service and instant transfer.</p></div>
+      <div class="l-card reveal"><h3>Telecom sites</h3><p>Remote, unmanned installations where telemetry and predictive health replace truck rolls.</p></div>
+      <div class="l-card reveal"><h3>Medical equipment</h3><p>Devices where battery reliability is a patient-safety issue and documentation burden is real.</p></div>
+      <div class="l-card reveal"><h3>Data infrastructure</h3><p>Rack-level and facility-level energy buffers designed for 20-year duty expectations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-band on-dark" style="padding:4.6rem 0">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Capabilities</div>
+      <h2 class="display">Built for the always-on world</h2>
+    </div>
+    <div class="tech-grid">
+      <ul class="list-check reveal" style="align-self:center">
+        <li>Redundant protection paths and fail-safe disconnects</li>
+        <li>Hot-swap and modular pack architectures</li>
+        <li>Continuous state-of-health reporting to your NOC or BMS</li>
+        <li>Chemistry choices optimized for float life, not just capacity</li>
+        <li>Predictive replacement scheduling (Phase 02 roadmap)</li>
+      </ul>
+      <div class="reveal">
+        <div class="stat" style="background:rgba(255,255,255,.045);border-color:var(--line-dark)">
+          <div class="num" style="color:#fff"><em>~31%</em> CAGR</div>
+          <div class="what" style="color:rgba(255,255,255,.62)">Projected growth of stationary energy storage — the fastest-growing battery management application through 2031.</div>
+          <div class="src">Source: Mordor Intelligence</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;margin-top:5.2rem">
+  <div class="container">
+    <div class="cta-band on-dark reveal">
+      <img class="watermark" src="images/symbol.png" alt="" aria-hidden="true">
+      <div>
+        <div class="eyebrow">Critical power</div>
+        <h2 class="display">Tell us what can't go dark</h2>
+        <p>Share your runtime requirements and environment — we'll propose an architecture built for it.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-solid" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     SITE FOOTER — shared across all pages.
+     To change it: edit partials/footer.html, then run
+       python tools/sync_partials.py
+============================================================ -->
+<!-- FOOTER:BEGIN -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+        <img class="word" src="images/wordmark-white.png" alt="Auravolt">
+        <p>Custom battery integration today. AI-driven energy intelligence next.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Subscribed ✓';">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn-solid" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="product-manufacturers.html">Product manufacturers</a></li>
+          <li><a href="battery-producers.html">Battery producers</a></li>
+        </ul>
+        <h4 style="margin-top:1.6rem">Industries</h4>
+        <ul>
+          <li><a href="critical-power.html">Critical power</a></li>
+          <li><a href="defense.html">Defense</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Technology</h4>
+        <ul>
+          <li><a href="technology.html">Integration Core</a></li>
+          <li><a href="index.html">Roadmap</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources.html">Blog</a></li>
+          <li><a href="resources.html">White papers</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Get in touch</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Auravolt Corp. 2026 — auravolt.ai</span>
+      <span><a href="mailto:connect@auravolt.ai">connect@auravolt.ai</a></span>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+
+<script src="js/script.js"></script>
+</body>
+</html>

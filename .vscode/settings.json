@@ -1,0 +1,7 @@
+{
+  "liveServer.settings.donotShowInfoMsg": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "editor.tabSize": 2,
+  "html.format.wrapLineLength": 0
+}

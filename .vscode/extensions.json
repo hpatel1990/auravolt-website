@@ -1,0 +1,8 @@
+{
+  // VS Code will offer to install these when the folder is opened.
+  "recommendations": [
+    "ritwickdey.LiveServer",      // right-click index.html -> "Open with Live Server"
+    "esbenp.prettier-vscode",     // code formatting
+    "EditorConfig.EditorConfig"   // applies .editorconfig rules
+  ]
+}

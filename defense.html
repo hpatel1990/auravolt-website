@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defense — Auravolt</title>
+<meta name="description" content="Rugged, standardized battery integration for soldier-worn systems, unmanned platforms, and field communications.">
+<link rel="icon" type="image/png" href="images/symbol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="defense">
+
+<!-- ============================================================
+     SITE HEADER — shared across all pages.
+     To change it: edit partials/header.html, then run
+       python tools/sync_partials.py
+     (or edit here and copy to the other pages by hand)
+============================================================ -->
+<!-- HEADER:BEGIN -->
+<header id="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Auravolt home">
+      <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+      <img class="word" src="images/wordmark-dark.png" alt="Auravolt">
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="technology.html" data-nav="technology">Technology</a></li>
+      <li class="has-drop">
+        <a href="product-manufacturers.html" data-nav-group="solutions">Solutions</a>
+        <ul class="drop">
+          <li><a href="product-manufacturers.html" data-nav="product-manufacturers">Product Manufacturers</a></li>
+          <li><a href="battery-producers.html" data-nav="battery-producers">Battery Producers</a></li>
+        </ul>
+      </li>
+      <li class="has-drop">
+        <a href="critical-power.html" data-nav-group="industries">Industries</a>
+        <ul class="drop">
+          <li><a href="critical-power.html" data-nav="critical-power">Critical Power</a></li>
+          <li><a href="defense.html" data-nav="defense">Defense</a></li>
+          <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
+        </ul>
+      </li>
+      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li class="has-drop">
+        <a href="about.html" data-nav-group="company">Company</a>
+        <ul class="drop">
+          <li><a href="about.html" data-nav="about">About Us</a></li>
+          <li><a href="careers.html" data-nav="careers">Careers</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<!-- HEADER:END -->
+
+<main>
+<section class="page-hero on-dark">
+  <div class="container">
+    <img class="ph-mark" src="images/symbol.png" alt="" aria-hidden="true">
+    <div class="crumb"><a href="index.html">Home</a> / Industries / Defense</div>
+    <h1 class="display">Power for the <span class="volt">mission edge</span></h1>
+    <p class="lede">Soldier-worn systems, unmanned platforms, and field communications demand power that survives rough handling, temperature extremes, and unforgiving logistics.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-solid" href="contact.html">Start a conversation</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">The challenge</div>
+      <h2 class="display">Every device, a different battery</h2>
+      <p>Field units carry a zoo of incompatible packs, chargers, and connectors. Weight goes up, interoperability goes down, and resupply becomes its own mission. A common integration layer changes that math.</p>
+    </div>
+    <div class="cards-3">
+      <div class="l-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
+        <h3>Ruggedized by requirement</h3>
+        <p>Vibration, shock, humidity, and wide-temperature operation treated as design inputs, not afterthoughts.</p>
+      </div>
+      <div class="l-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7zM12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
+        <h3>One platform, many devices</h3>
+        <p>Standardized packs and interfaces across radios, sensors, and unmanned systems simplify training and resupply.</p>
+      </div>
+      <div class="l-card reveal">
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V9M11 16V5M16 16v-6M21 16v-3"/></svg></div>
+        <h3>Readiness you can query</h3>
+        <p>State-of-health telemetry turns "is this pack good?" from a guess into a data point before the mission, not during it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-band on-dark reveal">
+      <img class="watermark" src="images/symbol.png" alt="" aria-hidden="true">
+      <div>
+        <div class="eyebrow">Defense</div>
+        <h2 class="display">Discuss your program requirements</h2>
+        <p>We work with primes and integrators on power architectures for fielded systems. Reach out to start a scoping conversation.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-solid" href="contact.html">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================================================
+     SITE FOOTER — shared across all pages.
+     To change it: edit partials/footer.html, then run
+       python tools/sync_partials.py
+============================================================ -->
+<!-- FOOTER:BEGIN -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+        <img class="word" src="images/wordmark-white.png" alt="Auravolt">
+        <p>Custom battery integration today. AI-driven energy intelligence next.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Subscribed ✓';">
+          <input type="email" placeholder="Email address" aria-label="Email address" required>
+          <button class="btn btn-solid" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="foot-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="product-manufacturers.html">Product manufacturers</a></li>
+          <li><a href="battery-producers.html">Battery producers</a></li>
+        </ul>
+        <h4 style="margin-top:1.6rem">Industries</h4>
+        <ul>
+          <li><a href="critical-power.html">Critical power</a></li>
+          <li><a href="defense.html">Defense</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Technology</h4>
+        <ul>
+          <li><a href="technology.html">Integration Core</a></li>
+          <li><a href="index.html">Roadmap</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="resources.html">Blog</a></li>
+          <li><a href="resources.html">White papers</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="careers.html">Careers</a></li>
+          <li><a href="contact.html">Get in touch</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© Auravolt Corp. 2026 — auravolt.ai</span>
+      <span><a href="mailto:connect@auravolt.ai">connect@auravolt.ai</a></span>
+    </div>
+  </div>
+</footer>
+<!-- FOOTER:END -->
+
+<script src="js/script.js"></script>
+</body>
+</html>
