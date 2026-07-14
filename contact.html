@@ -53,11 +53,41 @@
       </li>
     </ul>
     <div class="nav-cta">
-      <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      <button type="button" class="btn btn-solid" id="ctaTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="ctaOverlay">Get in touch</button>
       <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
+
+<div class="cta-overlay" id="ctaOverlay" role="dialog" aria-modal="true" aria-label="Get in touch" aria-hidden="true">
+  <div class="cta-panel">
+  <div class="container contact-grid cta-overlay-body">
+    <div class="cta-overlay-info">
+      <div class="eyebrow">Get in touch</div>
+      <h2 class="display">Ready for a new world of <span class="volt">battery power</span></h2>
+      <p class="lede">Please fill out the form and an Auravolt team member will reach out.</p>
+      <div class="contact-info">
+        <h3>General inquiries</h3>
+        <p><a href="mailto:connect@auravolt.ai">connect@auravolt.ai</a></p>
+        <h3>Location</h3>
+        <p>California, USA</p>
+      </div>
+    </div>
+    <form class="form" id="ctaForm">
+      <div class="row2">
+        <div><label for="cta-first">First name</label><input id="cta-first" type="text" placeholder="First name" required></div>
+        <div><label for="cta-last">Last name</label><input id="cta-last" type="text" placeholder="Last name" required></div>
+      </div>
+      <div><label for="cta-title">Job title</label><input id="cta-title" type="text" placeholder="Job title"></div>
+      <div><label for="cta-company">Company</label><input id="cta-company" type="text" placeholder="Company name"></div>
+      <div><label for="cta-email">Email</label><input id="cta-email" type="email" placeholder="you@company.com" required></div>
+      <div><label for="cta-msg">Message</label><textarea id="cta-msg" placeholder="What are you building?"></textarea></div>
+      <button class="btn btn-solid" type="submit">Submit</button>
+      <p class="fine">Demo form — by submitting, you consent to Auravolt storing the provided information to respond to your inquiry.</p>
+    </form>
+  </div>
+  </div>
+</div>
 <!-- HEADER:END -->
 
 <main>
@@ -66,7 +96,7 @@
     <img class="ph-mark" src="images/symbol.png" alt="" aria-hidden="true">
     <div class="crumb"><a href="index.html">Home</a> / Get in Touch</div>
     <h1 class="display">Let's talk <span class="volt">power</span></h1>
-    <p class="lede">Tell us what you're building. A member of the engineering team — not a bot, not a sales sequence — reads every inquiry.</p>
+    <p class="lede">Tell us what you're building. A member of the engineering team reveiw every inquiry.</p>
   </div>
 </section>
 
@@ -95,7 +125,7 @@
           <label for="cf-msg">What are you building?</label>
           <textarea id="cf-msg" placeholder="Voltage, current, envelope, environment, timeline — whatever you have."></textarea>
         </div>
-        <div><button class="btn btn-solid" type="submit">Send message</button></div>
+        <div><button class="btn btn-solid" type="submit">Submit</button></div>
         <p class="fine">Demo form — wire this to your form handler or CRM before launch. By submitting, you consent to Auravolt storing the provided information to respond to your inquiry.</p>
       </form>
       <div class="contact-info reveal">

@@ -24,6 +24,43 @@ menuBtn.addEventListener('click', () => {
   menuBtn.setAttribute('aria-expanded', open);
 });
 
+/* ---------- Get in touch overlay ---------- */
+const ctaTrigger = document.getElementById('ctaTrigger');
+const ctaOverlay = document.getElementById('ctaOverlay');
+if (ctaTrigger && ctaOverlay) {
+  const ctaForm = document.getElementById('ctaForm');
+  const ctaLabel = ctaTrigger.textContent;
+  const openCta = () => {
+    ctaOverlay.classList.add('open');
+    ctaOverlay.setAttribute('aria-hidden', 'false');
+    ctaTrigger.setAttribute('aria-expanded', 'true');
+    ctaTrigger.setAttribute('aria-label', 'Close');
+    ctaTrigger.classList.add('is-open');
+    ctaTrigger.innerHTML = '&times;';
+    document.body.classList.add('cta-open');
+    document.body.style.overflow = 'hidden';
+  };
+  const closeCta = () => {
+    ctaOverlay.classList.remove('open');
+    ctaOverlay.setAttribute('aria-hidden', 'true');
+    ctaTrigger.setAttribute('aria-expanded', 'false');
+    ctaTrigger.removeAttribute('aria-label');
+    ctaTrigger.classList.remove('is-open');
+    ctaTrigger.textContent = ctaLabel;
+    document.body.classList.remove('cta-open');
+    document.body.style.overflow = '';
+  };
+  ctaTrigger.addEventListener('click', () => {
+    ctaOverlay.classList.contains('open') ? closeCta() : openCta();
+  });
+  ctaOverlay.addEventListener('click', e => { if (e.target === ctaOverlay) closeCta(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && ctaOverlay.classList.contains('open')) closeCta(); });
+  ctaForm.addEventListener('submit', e => {
+    e.preventDefault();
+    ctaForm.querySelector('button[type=submit]').textContent = 'Message sent ✓ (demo)';
+  });
+}
+
 /* ---------- Highlight current page in the nav ---------- */
 const NAV_GROUPS = {
   'product-manufacturers': 'solutions',
