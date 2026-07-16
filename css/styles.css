@@ -63,11 +63,11 @@ header{position:sticky;top:0;z-index:60;padding:18px 20px 0;background:transpare
 header.scrolled .nav{background:rgba(255,255,255,.92);box-shadow:0 16px 40px rgba(15,23,20,.14), 0 4px 12px rgba(15,23,20,.08)}
 body.cta-open header .nav{border-radius:28px 28px 0 0;border-bottom-color:transparent;box-shadow:none}
 .brand{display:flex;align-items:center;gap:clamp(8px,1vw,16px);justify-self:start;flex-shrink:0}
-.brand img.sym{height:clamp(38px,5.2vw,64px);width:auto;flex-shrink:0}
-.brand img.word{height:clamp(26px,3.6vw,44px);width:auto;flex-shrink:0}
-.nav-links{display:flex;align-items:center;justify-content:center;justify-self:center;gap:clamp(2.4rem,3.2vw,4rem);list-style:none}
+.brand img.sym{height:clamp(32px,3.6vw,52px);width:auto;flex-shrink:0}
+.brand img.word{height:clamp(20px,2.4vw,34px);width:auto;flex-shrink:0}
+.nav-links{display:flex;align-items:center;justify-content:center;justify-self:center;gap:clamp(1.1rem,1.6vw,2rem);list-style:none}
 .nav-links > li{position:relative}
-.nav-links a{font-size:1.08rem;font-weight:500;color:var(--ink);position:relative;padding:6px 0;display:inline-block}
+.nav-links a{font-size:clamp(14px,.7vw + 11px,17px);font-weight:500;color:var(--ink);position:relative;padding:6px 0;display:inline-block;white-space:nowrap}
 .nav-links > li > a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--volt);transition:width .2s ease}
 .nav-links > li > a:hover::after,.nav-links > li > a.active::after{width:100%}
 .has-drop > a{padding-right:14px}
@@ -368,7 +368,7 @@ footer{background:linear-gradient(180deg,var(--footer-green) 0%,var(--footer-gre
 .reveal.in{opacity:1;transform:none}
 
 /* Mobile */
-@media (max-width:1240px){
+@media (max-width:880px){
   .nav-links,.nav-cta .btn-solid{display:none}
   .menu-btn{display:block}
   .nav-links.open{display:flex;position:absolute;top:calc(100% + 10px);left:0;right:0;background:var(--paper);flex-direction:column;gap:0;border:1px solid var(--line);border-radius:6px;box-shadow:var(--shadow-md);padding:.5rem 0;align-items:stretch;max-height:calc(100vh - 96px);overflow:auto}
