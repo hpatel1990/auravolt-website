@@ -30,8 +30,8 @@
   --nav-h:80px;
   --cta-h:52px;
   --cta-gap:calc((var(--nav-h) - var(--cta-h)) / 2);
-  --font-display:'Michroma',sans-serif;
-  --font-body:'IBM Plex Sans',sans-serif;
+  --font-display:'Plus Jakarta Sans',sans-serif;
+  --font-body:'Plus Jakarta Sans',sans-serif;
   --font-mono:'IBM Plex Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -41,7 +41,7 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 .container{max-width:var(--max);margin:0 auto;padding:0 28px}
 h1,h2,h3{line-height:1.25}
-.display{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.02em;font-weight:400}
+.display{font-family:var(--font-display);text-transform:none;letter-spacing:-.02em;font-weight:700}
 .eyebrow{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--volt-deep);display:flex;align-items:center;gap:.65em;margin-bottom:1.1rem}
 .eyebrow::before{content:"";width:11px;height:11px;flex:0 0 11px;background:
   linear-gradient(to bottom, var(--graphite) 0 46%, transparent 46% 54%, var(--volt) 54% 100%);
@@ -109,21 +109,11 @@ body.cta-open header .nav{border-radius:28px 28px 0 0;border-bottom-color:transp
 
 /* ---------- HERO (home) ---------- */
 .hero{background:radial-gradient(1200px 640px at 78% -10%, #2B3A33 0%, var(--graphite) 55%);color:#fff;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:center;padding:6.2rem 0 5.6rem;position:relative;z-index:2}
-.hero h1{font-size:clamp(1.8rem,3.9vw,3.3rem);margin:0 0 1.4rem}
+.hero-grid{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:920px;margin:0 auto;gap:0;padding:6.6rem 0 5.6rem;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4.6rem);margin:0 0 1.5rem;letter-spacing:-.03em}
 .hero h1 .volt,.page-hero h1 .volt{background:linear-gradient(120deg,var(--volt-bright),var(--volt-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lede{font-size:1.14rem;color:rgba(255,255,255,.78);max-width:34em;margin-bottom:2.2rem}
-.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
-.hero-mark{position:relative;display:flex;justify-content:center}
-.hero-mark .halo{position:absolute;inset:-18%;background:radial-gradient(closest-side,rgba(76,255,180,.22),transparent 70%);filter:blur(6px);animation:auraPulse 6s ease-in-out infinite}
-@keyframes auraPulse{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.09);opacity:1}}
-.chev-stack{position:relative;width:min(300px,68%);aspect-ratio:1131/1459}
-.chev-stack img{position:absolute;inset:0;width:100%;height:auto}
-.chev-top{clip-path:inset(0 0 52% 0);animation:dockTop 1.4s cubic-bezier(.2,.8,.2,1) .2s both}
-.chev-bottom{clip-path:inset(48% 0 0 0);animation:dockBottom 1.4s cubic-bezier(.2,.8,.2,1) .2s both}
-@keyframes dockTop{from{transform:translateY(-26px);opacity:0}to{transform:translateY(0);opacity:1}}
-@keyframes dockBottom{from{transform:translateY(26px);opacity:0}to{transform:translateY(0);opacity:1}}
-.hero-tags{display:flex;gap:2.4rem;flex-wrap:wrap;border-top:1px solid var(--line-dark);padding:1.4rem 0 1.6rem;position:relative;z-index:2}
+.hero p.lede{font-size:1.14rem;color:rgba(255,255,255,.78);max-width:34em;margin:0 auto 2.2rem}
+.hero-tags{display:flex;gap:2.4rem;flex-wrap:wrap;justify-content:center;border-top:1px solid var(--line-dark);padding:1.4rem 0 1.6rem;position:relative;z-index:2}
 .hero-tags .tag{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .hero-tags .tag b{color:var(--volt-bright);font-weight:500}
 
@@ -381,9 +371,7 @@ footer{background:linear-gradient(180deg,var(--footer-green) 0%,var(--footer-gre
 @media (max-width:960px){
   .cards-4{grid-template-columns:repeat(2,1fr)}
   .stats,.steps,.cards-3,.values,.quotes{grid-template-columns:1fr 1fr}
-  .hero-grid{grid-template-columns:1fr;padding:4.2rem 0 3.2rem}
-  .hero-mark{order:-1}
-  .chev-stack{width:min(190px,52%)}
+  .hero-grid{padding:4.2rem 0 3.2rem}
   .foot-grid,.team-grid{grid-template-columns:1fr 1fr}
   .tech-grid,.split,.contact-grid{grid-template-columns:1fr}
   .timeline{grid-template-columns:1fr;gap:1.4rem}
