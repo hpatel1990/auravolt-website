@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Auravolt — Power, engineered around your product</title>
 <meta name="description" content="Auravolt builds custom battery integration solutions that free products from fixed chemistry constraints — with an AI-driven energy intelligence platform on the roadmap.">
-<link rel="icon" type="image/png" href="images/symbol.png">
+<link rel="icon" type="image/svg+xml" href="images/symbol-dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 <header id="topbar">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Auravolt home">
-      <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+      <img class="sym" src="images/symbol-dark.svg" alt="Auravolt symbol">
       <img class="word" src="images/wordmark-dark.png" alt="Auravolt">
     </a>
     <ul class="nav-links" id="navLinks">
@@ -53,7 +53,7 @@
       </li>
     </ul>
     <div class="nav-cta">
-      <button type="button" class="btn btn-solid" id="ctaTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="ctaOverlay">Get in touch</button>
+      <button type="button" class="btn btn-solid" id="ctaTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="ctaOverlay">Get in touch<span class="btn-arrow" aria-hidden="true">→</span></button>
       <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -149,6 +149,65 @@
       <h2 class="display">The Auravolt Integration Core</h2>
       <p>A modular hardware-and-software layer that sits between cells and product — handling monitoring, protection, balancing, and communication so your device just sees clean, reliable power.</p>
     </div>
+    <div class="integration-viz reveal" aria-hidden="true">
+      <svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ivCoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8DC63F"/>
+            <stop offset="100%" stop-color="#3E9B2B"/>
+          </linearGradient>
+        </defs>
+
+        <path class="iv-path" d="M170,60 C400,60 430,200 550,200"/>
+        <path class="iv-path" d="M170,153 C400,153 430,200 550,200"/>
+        <path class="iv-path" d="M170,247 C400,247 430,200 550,200"/>
+        <path class="iv-path" d="M170,340 C400,340 430,200 550,200"/>
+        <path class="iv-path" d="M690,200 L860,200"/>
+
+        <g>
+          <rect class="iv-cell-body" x="60" y="28" width="96" height="64" rx="10"/>
+          <rect class="iv-cell-nub" x="156" y="48" width="14" height="24" rx="3"/>
+          <text class="iv-cell-label" x="108" y="66" text-anchor="middle">Li-ion</text>
+        </g>
+        <g>
+          <rect class="iv-cell-body" x="60" y="121" width="96" height="64" rx="10"/>
+          <rect class="iv-cell-nub" x="156" y="141" width="14" height="24" rx="3"/>
+          <text class="iv-cell-label" x="108" y="159" text-anchor="middle">LFP</text>
+        </g>
+        <g>
+          <rect class="iv-cell-body" x="60" y="215" width="96" height="64" rx="10"/>
+          <rect class="iv-cell-nub" x="156" y="235" width="14" height="24" rx="3"/>
+          <text class="iv-cell-label" x="108" y="253" text-anchor="middle">Na-ion</text>
+        </g>
+        <g>
+          <rect class="iv-cell-body" x="60" y="308" width="96" height="64" rx="10"/>
+          <rect class="iv-cell-nub" x="156" y="328" width="14" height="24" rx="3"/>
+          <text class="iv-cell-label" x="108" y="346" text-anchor="middle">LTO</text>
+        </g>
+
+        <circle class="iv-core-ring" cx="620" cy="200" r="78"/>
+        <polygon class="iv-core" points="620,124 696,200 620,276 544,200"/>
+        <text class="iv-core-label" x="620" y="205" text-anchor="middle">Core</text>
+
+        <rect class="iv-product" x="860" y="110" width="280" height="180" rx="16"/>
+        <rect class="iv-chip" x="960" y="165" width="80" height="70" rx="6"/>
+        <line class="iv-chip" x1="975" y1="165" x2="975" y2="150"/>
+        <line class="iv-chip" x1="1000" y1="165" x2="1000" y2="150"/>
+        <line class="iv-chip" x1="1025" y1="165" x2="1025" y2="150"/>
+        <line class="iv-chip" x1="975" y1="235" x2="975" y2="250"/>
+        <line class="iv-chip" x1="1000" y1="235" x2="1000" y2="250"/>
+        <line class="iv-chip" x1="1025" y1="235" x2="1025" y2="250"/>
+        <circle class="iv-pulse-dot" cx="1000" cy="200" r="6"/>
+        <text class="iv-product-label" x="1000" y="270" text-anchor="middle">Your product</text>
+
+        <circle class="iv-flow iv-flow-1" r="5"/>
+        <circle class="iv-flow iv-flow-2" r="5"/>
+        <circle class="iv-flow iv-flow-3" r="5"/>
+        <circle class="iv-flow iv-flow-4" r="5"/>
+        <circle class="iv-flow iv-flow-5" r="6"/>
+        <circle class="iv-flow iv-flow-6" r="6"/>
+      </svg>
+    </div>
     <div class="cards-4">
       <div class="p-card reveal">
         <div class="icon"><svg viewBox="0 0 24 24"><path d="M8 3v4M16 3v4M6 7h12v6a6 6 0 0 1-12 0zM12 19v2"/></svg></div>
@@ -209,7 +268,7 @@
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Why now</div>
@@ -236,7 +295,7 @@
   </div>
 </section>
 
-<section style="padding-top:0">
+<section>
   <div class="container">
     <div class="section-head reveal">
       <div class="eyebrow">Who we serve</div>
@@ -244,14 +303,14 @@
     </div>
     <div class="serve">
       <a class="serve-card a reveal" href="product-manufacturers.html">
-        <img class="bigmark" src="images/symbol.png" alt="" aria-hidden="true">
+        <img class="bigmark" src="images/symbol-white.svg" alt="" aria-hidden="true">
         <div class="k">For product manufacturers</div>
         <h3>Adopt better batteries without redesign</h3>
         <p>Bring next-generation cells into your existing product line — we handle the integration, safety, and interface work.</p>
         <span class="go">Learn more</span>
       </a>
       <a class="serve-card b reveal" href="battery-producers.html">
-        <img class="bigmark" src="images/symbol.png" alt="" aria-hidden="true">
+        <img class="bigmark" src="images/symbol-white.svg" alt="" aria-hidden="true">
         <div class="k">For battery producers</div>
         <h3>Reach markets your format can't</h3>
         <p>Your chemistry, our integration layer — get deployed into real products without building custom packs for every customer.</p>
@@ -261,10 +320,10 @@
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="bare" style="padding-top:0">
   <div class="container">
     <div class="cta-band on-dark reveal">
-      <img class="watermark" src="images/symbol.png" alt="" aria-hidden="true">
+      <img class="watermark" src="images/symbol-white.svg" alt="" aria-hidden="true">
       <div>
         <div class="eyebrow">Ready to build?</div>
         <h2 class="display">Let's engineer your power system</h2>
@@ -288,7 +347,7 @@
   <div class="container">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img class="sym" src="images/symbol.png" alt="Auravolt symbol">
+        <img class="sym" src="images/symbol-white.svg" alt="Auravolt symbol">
         <img class="word" src="images/wordmark-white.png" alt="Auravolt">
         <p>Custom battery integration today. AI-driven energy intelligence next.</p>
         <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Subscribed ✓';">
