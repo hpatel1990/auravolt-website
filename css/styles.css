@@ -219,7 +219,7 @@ section.bare{margin:0;padding:5.2rem 0;border-radius:0;overflow:visible;backgrou
 .serve-card{border-radius:var(--radius);padding:2.6rem 2.2rem;color:#fff;position:relative;overflow:hidden;min-height:260px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow-md);transition:transform .2s ease}
 .serve-card:hover{transform:translateY(-3px)}
 .serve-card.a{background:linear-gradient(150deg,#26333A, var(--graphite))}
-.serve-card.b{background:linear-gradient(150deg,#3E8E27,#2E6E1D)}
+.serve-card.b{background:linear-gradient(150deg,var(--volt-deep),var(--footer-green))}
 .serve-card .k{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.8rem}
 .serve-card h3{font-size:1.35rem;margin-bottom:.6rem}
 .serve-card p{color:rgba(255,255,255,.75);font-size:.98rem;max-width:34em}
