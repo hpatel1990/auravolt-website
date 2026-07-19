@@ -79,9 +79,7 @@ body.cta-open header .nav{border-radius:28px 28px 0 0;border-bottom-color:transp
 .drop a:hover{background:var(--paper);color:var(--volt-deep)}
 .drop .grp{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#9AA8A3;padding:.55rem .85rem .2rem}
 .nav-cta{display:flex;align-items:center;gap:clamp(.75rem,1vw,1.5rem);justify-self:end}
-#ctaTrigger{height:var(--cta-h);border-radius:999px;padding:.4em .4em .4em 1.4em}
-#ctaTrigger .btn-arrow{width:30px;height:30px;flex:0 0 30px;border-radius:50%;background:rgba(255,255,255,.24);display:inline-flex;align-items:center;justify-content:center;font-size:.95rem;transition:transform .18s ease, background .18s ease}
-#ctaTrigger:hover .btn-arrow{background:rgba(255,255,255,.34);transform:translateX(2px)}
+#ctaTrigger{height:var(--cta-h);border-radius:999px;padding:.4em 1.6em;justify-content:center;text-align:center}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .menu-btn span{display:block;width:24px;height:2px;background:var(--graphite);margin:5px 0;transition:.25s}
 #ctaTrigger.is-open{background:none;color:var(--ink);border:1.5px solid var(--line);width:44px;height:44px;flex:0 0 44px;padding:0;border-radius:50%;box-shadow:none;font-size:1.5rem;line-height:1;justify-content:center}
