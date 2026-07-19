@@ -82,7 +82,11 @@ body.cta-open header .nav{border-radius:28px 28px 0 0;border-bottom-color:transp
 #ctaTrigger{height:var(--cta-h);border-radius:999px;padding:.4em 1.6em;justify-content:center;text-align:center}
 .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px}
 .menu-btn span{display:block;width:24px;height:2px;background:var(--graphite);margin:5px 0;transition:.25s}
-#ctaTrigger.is-open{background:none;color:var(--ink);border:1.5px solid var(--line);width:44px;height:44px;flex:0 0 44px;padding:0;border-radius:50%;box-shadow:none;font-size:1.5rem;line-height:1;justify-content:center}
+#ctaTrigger.is-open{background:none;color:var(--ink);border:1.5px solid var(--line);width:44px;height:44px;flex:0 0 44px;padding:0;border-radius:50%;box-shadow:none;position:relative}
+#ctaTrigger.is-open .btn-label{display:none}
+#ctaTrigger.is-open::before,#ctaTrigger.is-open::after{content:"";position:absolute;top:50%;left:50%;width:16px;height:1.6px;background:currentColor;border-radius:1px}
+#ctaTrigger.is-open::before{transform:translate(-50%,-50%) rotate(45deg)}
+#ctaTrigger.is-open::after{transform:translate(-50%,-50%) rotate(-45deg)}
 #ctaTrigger.is-open:hover{background:var(--graphite);color:#fff;border-color:var(--graphite);transform:translateZ(0)}
 
 /* ---------- Get in touch dropdown ---------- */
