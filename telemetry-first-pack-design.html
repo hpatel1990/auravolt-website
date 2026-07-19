@@ -3,13 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources — Auravolt</title>
-<meta name="description" content="Engineering write-ups and technical white papers on battery integration, cell chemistry selection, state of health, and telemetry-first pack design.">
+<title>Telemetry-First Pack Design: Why Data Changes Battery Warranty Economics — Auravolt</title>
+<meta name="description" content="Designing battery packs for telemetry from day one changes warranty economics and unlocks predictive maintenance. Here's how battery data collection pays for itself.">
 <link rel="icon" type="image/svg+xml" href="images/symbol-dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Telemetry-First Pack Design: Why Data Changes Battery Warranty Economics",
+  "description": "Designing battery packs for telemetry from day one changes warranty economics and unlocks predictive maintenance. Here's how battery data collection pays for itself.",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-08",
+  "author": { "@type": "Organization", "name": "Auravolt" },
+  "publisher": { "@type": "Organization", "name": "Auravolt", "logo": { "@type": "ImageObject", "url": "https://auravolt.ai/images/symbol-dark.svg" } },
+  "mainEntityOfPage": "https://auravolt.ai/telemetry-first-pack-design.html"
+}
+</script>
 </head>
 <body data-page="resources">
 
@@ -43,7 +56,7 @@
           <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
         </ul>
       </li>
-      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li><a href="resources.html" data-nav="resources" class="active">Resources</a></li>
       <li class="has-drop">
         <a href="about.html" data-nav-group="company">Company</a>
         <ul class="drop">
@@ -94,45 +107,46 @@
 <section class="page-hero on-dark">
   <div class="container">
     <img class="ph-mark" src="images/symbol-white.svg" alt="" aria-hidden="true">
-    <div class="crumb"><a href="index.html">Home</a> / Resources</div>
-    <h1 class="display">Notes from the <span class="volt">bench</span></h1>
-    <p class="lede">Engineering write-ups and deeper technical papers on battery integration, chemistry selection, and pack design.</p>
+    <div class="crumb"><a href="index.html">Home</a> / <a href="resources.html">Resources</a> / Telemetry-First Pack Design</div>
+    <h1 class="display">Telemetry-first <span class="volt">pack design</span></h1>
+    <p class="lede">How designing for data from day one changes warranty economics and unlocks predictive maintenance.</p>
   </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="res-tabs reveal" role="tablist" aria-label="Filter resources">
-      <button class="res-tab active" data-filter="all">All</button>
-      <button class="res-tab" data-filter="blog">Blog</button>
-      <button class="res-tab" data-filter="whitepaper">White papers</button>
-    </div>
-    <div class="res-grid" id="resGrid">
-      <a class="res-card reveal" href="lfp-vs-sodium-ion-stationary-backup.html" data-cat="blog">
-        <span class="cat">Blog</span>
-        <h3>LFP vs. sodium-ion for stationary backup</h3>
-        <p>A practical decision framework: cost per cycle, float behavior, temperature windows, and when energy density actually matters.</p>
-        <span class="date">May 12, 2026</span>
-      </a>
-      <a class="res-card reveal" href="battery-state-of-health-explained.html" data-cat="blog">
-        <span class="cat">Blog</span>
-        <h3>What state-of-health actually tells you (and what it doesn't)</h3>
-        <p>Demystifying SoH estimation methods, their error bars, and how to use them for replacement planning.</p>
-        <span class="date">June 3, 2026</span>
-      </a>
-      <a class="res-card reveal" href="the-case-for-battery-integration.html" data-cat="whitepaper">
-        <span class="cat">White paper</span>
-        <h3>The case for a battery integration layer</h3>
-        <p>A longer technical argument: why decoupling chemistry from product design lowers lifetime cost and derisks supply.</p>
-        <span class="date">June 22, 2026</span>
-      </a>
-      <a class="res-card reveal" href="telemetry-first-pack-design.html" data-cat="whitepaper">
-        <span class="cat">White paper</span>
-        <h3>Telemetry-first pack design</h3>
-        <p>How designing for data from day one changes warranty economics and unlocks predictive maintenance.</p>
-        <span class="date">July 8, 2026</span>
-      </a>
-    </div>
+  <div class="container legal">
+    <div class="updated">White paper · Published July 8, 2026 · 8 min read</div>
+
+    <p>Most battery packs are instrumented as an afterthought. Enough monitoring goes in to satisfy protection requirements — cutoffs for overvoltage, overcurrent, overtemperature — and not much more. That's sufficient to keep the pack safe. It's not sufficient to know anything useful about how the fleet is actually aging, why a specific unit failed, or whether your warranty reserve is sized correctly. Telemetry-first design starts from a different premise: instrument for data from the first prototype, and treat what you learn as a product asset, not a side effect of safety compliance.</p>
+
+    <h2>What "enough monitoring for safety" leaves on the table</h2>
+    <p>A minimally instrumented pack typically reports pack-level voltage, pack-level current, and one or two temperature points. That's enough to trip a protection threshold. It's not enough to answer basic questions that come up constantly in the field: which cell in the pack is diverging from the others, what the actual duty cycle looked like leading up to a failure, or whether a warranty claim reflects a manufacturing defect versus field misuse. Without that resolution, every failure investigation starts from a near-blank slate.</p>
+
+    <h2>What telemetry-first actually captures</h2>
+    <p>The specifics depend on the application and what the pack's cost and connectivity budget can support, but a telemetry-first design typically captures, at minimum:</p>
+    <ul>
+      <li>Per-cell (or per-group) voltage, not just pack-level voltage</li>
+      <li>Current and charge/discharge cycle counts</li>
+      <li>Temperature at multiple points, not a single average</li>
+      <li>Rest voltage readings, which are far more diagnostic of true cell condition than voltage under load</li>
+      <li>Event logs — protection trips, communication faults, unusual charge/discharge patterns</li>
+    </ul>
+    <p>None of this is exotic. The BMS hardware needed to measure it is a modest increment over what's already required for protection. The real design decision is architectural: does the firmware and data path treat this information as disposable (used only to trigger an immediate protection action, then discarded), or as a persistent stream worth storing and analyzing?</p>
+
+    <h2>What this unlocks</h2>
+    <h3>Warranty economics grounded in real usage</h3>
+    <p>Without fleet telemetry, warranty reserves get sized against worst-case assumptions, because that's all the data supports. With real usage data across a deployed fleet, reserves can be sized against actual duty cycles and actual failure modes — which in a well-designed product is almost always less severe than the worst case a warranty team has to plan around blind. That gap between "worst case we have to assume" and "what's actually happening" is where telemetry pays for itself.</p>
+    <h3>Faster root-cause on field failures</h3>
+    <p>When a pack fails in the field, per-cell history and event logs turn an investigation that would otherwise require physically recovering and disassembling the unit into something that can often be diagnosed remotely, in hours instead of weeks.</p>
+    <h3>Predictive maintenance instead of scheduled replacement</h3>
+    <p>Fleet-wide trending on the signals above is what makes it possible to flag a specific unit for inspection before it fails, rather than replacing on a fixed schedule that's either too conservative (wasting good packs) or not conservative enough (missing failures).</p>
+    <h3>A foundation for the next layer of intelligence</h3>
+    <p>Every one of these use cases depends on having the data in the first place. Adaptive charging, cross-fleet failure prediction, and automated warranty triage are all software problems that are unsolvable without the underlying telemetry — which is why we treat instrumentation as the prerequisite for the intelligence layer, not a separate initiative.</p>
+
+    <h2>Practical constraints worth planning for</h2>
+    <p>Telemetry-first design isn't free of tradeoffs. Per-cell monitoring adds BMS complexity and cost. Connectivity for real-time or near-real-time reporting isn't available or affordable in every deployment. And any fleet data pipeline needs to be designed with security and data-handling practices appropriate to the information it carries. None of these are reasons to skip instrumentation — they're reasons to make deliberate choices about resolution and reporting frequency rather than defaulting to the bare minimum by habit.</p>
+
+    <div class="notice">Every Auravolt-integrated pack streams telemetry from day one — see how this fits into the <a href="technology.html">Integration Core</a> and our roadmap toward AI-driven energy intelligence, or <a href="contact.html">talk to an engineer</a> about your monitoring requirements.</div>
   </div>
 </section>
 </main>

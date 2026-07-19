@@ -3,13 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources — Auravolt</title>
-<meta name="description" content="Engineering write-ups and technical white papers on battery integration, cell chemistry selection, state of health, and telemetry-first pack design.">
+<title>What Battery State of Health (SoH) Actually Tells You — Auravolt</title>
+<meta name="description" content="Battery state of health estimates aren't as precise as they look. Learn how SoH is calculated, its real error bars, and how to use it for replacement planning.">
 <link rel="icon" type="image/svg+xml" href="images/symbol-dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Battery State of Health (SoH) Actually Tells You (and What It Doesn't)",
+  "description": "Battery state of health estimates aren't as precise as they look. Learn how SoH is calculated, its real error bars, and how to use it for replacement planning.",
+  "datePublished": "2026-06-03",
+  "dateModified": "2026-06-03",
+  "author": { "@type": "Organization", "name": "Auravolt" },
+  "publisher": { "@type": "Organization", "name": "Auravolt", "logo": { "@type": "ImageObject", "url": "https://auravolt.ai/images/symbol-dark.svg" } },
+  "mainEntityOfPage": "https://auravolt.ai/battery-state-of-health-explained.html"
+}
+</script>
 </head>
 <body data-page="resources">
 
@@ -43,7 +56,7 @@
           <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
         </ul>
       </li>
-      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li><a href="resources.html" data-nav="resources" class="active">Resources</a></li>
       <li class="has-drop">
         <a href="about.html" data-nav-group="company">Company</a>
         <ul class="drop">
@@ -94,45 +107,54 @@
 <section class="page-hero on-dark">
   <div class="container">
     <img class="ph-mark" src="images/symbol-white.svg" alt="" aria-hidden="true">
-    <div class="crumb"><a href="index.html">Home</a> / Resources</div>
-    <h1 class="display">Notes from the <span class="volt">bench</span></h1>
-    <p class="lede">Engineering write-ups and deeper technical papers on battery integration, chemistry selection, and pack design.</p>
+    <div class="crumb"><a href="index.html">Home</a> / <a href="resources.html">Resources</a> / Battery State of Health</div>
+    <h1 class="display">What state-of-health actually tells you <span class="volt">(and what it doesn't)</span></h1>
+    <p class="lede">Demystifying SoH estimation methods, their error bars, and how to use them for replacement planning.</p>
   </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="res-tabs reveal" role="tablist" aria-label="Filter resources">
-      <button class="res-tab active" data-filter="all">All</button>
-      <button class="res-tab" data-filter="blog">Blog</button>
-      <button class="res-tab" data-filter="whitepaper">White papers</button>
-    </div>
-    <div class="res-grid" id="resGrid">
-      <a class="res-card reveal" href="lfp-vs-sodium-ion-stationary-backup.html" data-cat="blog">
-        <span class="cat">Blog</span>
-        <h3>LFP vs. sodium-ion for stationary backup</h3>
-        <p>A practical decision framework: cost per cycle, float behavior, temperature windows, and when energy density actually matters.</p>
-        <span class="date">May 12, 2026</span>
-      </a>
-      <a class="res-card reveal" href="battery-state-of-health-explained.html" data-cat="blog">
-        <span class="cat">Blog</span>
-        <h3>What state-of-health actually tells you (and what it doesn't)</h3>
-        <p>Demystifying SoH estimation methods, their error bars, and how to use them for replacement planning.</p>
-        <span class="date">June 3, 2026</span>
-      </a>
-      <a class="res-card reveal" href="the-case-for-battery-integration.html" data-cat="whitepaper">
-        <span class="cat">White paper</span>
-        <h3>The case for a battery integration layer</h3>
-        <p>A longer technical argument: why decoupling chemistry from product design lowers lifetime cost and derisks supply.</p>
-        <span class="date">June 22, 2026</span>
-      </a>
-      <a class="res-card reveal" href="telemetry-first-pack-design.html" data-cat="whitepaper">
-        <span class="cat">White paper</span>
-        <h3>Telemetry-first pack design</h3>
-        <p>How designing for data from day one changes warranty economics and unlocks predictive maintenance.</p>
-        <span class="date">July 8, 2026</span>
-      </a>
-    </div>
+  <div class="container legal">
+    <div class="updated">Blog · Published June 3, 2026 · 6 min read</div>
+
+    <p>"State of health" sounds like a measurement. It's reported as a clean percentage — 87% SoH, 62% SoH — with the implied precision of a fuel gauge. It isn't one. SoH is an estimate built from a model, and understanding where that model can be trusted (and where it can't) matters more than the number itself once you're using it to plan replacements, set warranty triggers, or size a second-life application.</p>
+
+    <h2>What SoH is supposed to measure</h2>
+    <p>At its core, SoH compares a battery's current capability to its beginning-of-life capability, usually expressed as a ratio of two things: capacity fade (how much usable energy the cell can still hold relative to new) and resistance rise (how much the cell's internal resistance has grown, which affects how much power it can deliver, especially under load). Most SoH figures you'll see quoted lead with the capacity number because it's easier to communicate, but resistance rise is often the more operationally relevant one for high-power applications.</p>
+
+    <h2>How it's actually estimated</h2>
+    <p>No practical system fully discharges a cell to bare metal and recharges it to measure true capacity on every cycle — that would defeat the purpose of the battery. Instead, SoH is inferred through a handful of methods, each with real limitations:</p>
+    <ul>
+      <li><strong>Coulomb counting:</strong> integrating current over time to track charge in and out. Accurate over short windows, but drifts without periodic recalibration against a known reference point (like a full charge).</li>
+      <li><strong>Impedance / internal resistance tracking:</strong> measuring voltage response to known current pulses. Sensitive to temperature and state of charge at the moment of measurement, which means two readings taken under different conditions aren't directly comparable without correction.</li>
+      <li><strong>Model-based estimation (e.g., Kalman filtering, electrochemical models):</strong> combines voltage, current, and temperature history with a cell model to estimate capacity and resistance simultaneously. More robust than either method alone, but only as good as the underlying model's fit to your specific cell and use pattern.</li>
+    </ul>
+    <p>Every one of these approaches produces an estimate with an error band, not a precise reading. Reputable BMS vendors will quote that error band; a number reported without one should be treated with suspicion.</p>
+
+    <h2>Where the error actually comes from</h2>
+    <p>A few factors routinely widen the gap between reported SoH and a cell's true condition:</p>
+    <ul>
+      <li><strong>Temperature:</strong> capacity and resistance both shift with temperature independent of aging, and an estimator that doesn't fully compensate will confuse a cold cell for a degraded one.</li>
+      <li><strong>C-rate and depth of discharge history:</strong> a cell cycled hard at high current ages differently than one cycled gently, and models calibrated on one profile can mis-estimate the other.</li>
+      <li><strong>Calibration drift:</strong> without periodic reference points, coulomb-counting error accumulates over months of operation.</li>
+      <li><strong>Cell-to-cell variation:</strong> in a multi-cell pack, SoH is often reported at the pack level even though individual cells age at different rates. A pack-level average can mask one weak cell dragging down real-world performance.</li>
+    </ul>
+
+    <h2>What SoH is genuinely good for</h2>
+    <p>Despite the caveats, SoH is a legitimately useful signal when used for what it's actually good at:</p>
+    <ul class="list-check">
+      <li>Fleet-level trending — spotting which units or deployment conditions are aging faster than expected</li>
+      <li>Warranty and replacement triggers — flagging packs that have crossed a threshold worth inspecting</li>
+      <li>Long-horizon replacement scheduling — budgeting for pack replacement across a fleet over years, where individual-unit precision matters less than aggregate accuracy</li>
+    </ul>
+
+    <h2>What it's not good for</h2>
+    <p>Treat a single SoH reading with skepticism if you're using it for precise remaining-life prediction on one specific pack, or as a stand-alone safety determination. A pack showing acceptable average SoH can still have one cell in a state that a pack-level estimate won't surface. SoH is a planning signal, not a certification.</p>
+
+    <h2>Practical guidance</h2>
+    <p>If you're specifying or evaluating a BMS, ask what error bar it quotes on SoH, under what conditions that error bar was characterized, and whether estimation happens at the cell level or only the pack level. Combine SoH trending with other signals — cell-level voltage divergence, temperature history, and event logs — rather than treating it as a single source of truth. This is exactly the kind of thing that gets easier the earlier you design for it, which is the argument we make in <a href="telemetry-first-pack-design.html">our piece on telemetry-first pack design</a>.</p>
+
+    <div class="notice">Auravolt's Integration Core estimates state of health at the cell level, not just the pack average, with error bars reported alongside the number. See how it fits into the <a href="technology.html">Integration Core architecture</a>, or <a href="contact.html">talk to an engineer</a> about your monitoring requirements.</div>
   </div>
 </section>
 </main>
