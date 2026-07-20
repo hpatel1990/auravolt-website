@@ -369,6 +369,10 @@ footer{background:linear-gradient(180deg,var(--footer-green) 0%,var(--footer-gre
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
 .reveal.in{opacity:1;transform:none}
 
+/* Apply toast */
+.apply-toast{position:fixed;left:50%;bottom:24px;z-index:300;max-width:min(90vw,480px);padding:.9em 1.4em;border-radius:999px;background:var(--graphite);color:#fff;font-size:.9rem;line-height:1.4;text-align:center;box-shadow:var(--shadow-md);opacity:0;pointer-events:none;transform:translate(-50%,12px);transition:opacity .25s ease, transform .25s ease}
+.apply-toast.show{opacity:1;transform:translate(-50%,0)}
+
 /* Mobile */
 @media (max-width:880px){
   .nav-links,.nav-cta .btn-solid{display:none}

@@ -91,6 +91,29 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
   });
 }));
 
+/* ---------- Job apply fallback (copy email + toast, in case no mail client is configured) ---------- */
+const applyLinks = document.querySelectorAll('.job, .apply-fallback');
+if (applyLinks.length) {
+  let toast, toastTimer;
+  const showToast = msg => {
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'apply-toast';
+      toast.setAttribute('role', 'status');
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    requestAnimationFrame(() => toast.classList.add('show'));
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 6000);
+  };
+  applyLinks.forEach(link => link.addEventListener('click', () => {
+    const email = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+    if (navigator.clipboard) navigator.clipboard.writeText(email).catch(() => {});
+    showToast(`Opening your email app — if nothing happens, email ${email} directly (address copied to your clipboard).`);
+  }));
+}
+
 /* ---------- Contact form (demo — wire to a real handler before launch) ---------- */
 const cform = document.getElementById('contactForm');
 if (cform) cform.addEventListener('submit', e => {
