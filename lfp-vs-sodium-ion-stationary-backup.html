@@ -3,15 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Defense — Auravolt</title>
-<meta name="description" content="Rugged, standardized battery integration for soldier-worn systems, unmanned platforms, and field communications.">
+<title>LFP vs. Sodium-Ion for Stationary Backup: A Practical Comparison — Auravolt</title>
+<meta name="description" content="Choosing between LFP and sodium-ion for stationary backup power? Compare cost per cycle, temperature range, cycle life, and supply chain risk to pick the right chemistry.">
 <link rel="icon" type="image/svg+xml" href="images/symbol-dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "LFP vs. Sodium-Ion for Stationary Backup: A Practical Comparison",
+  "description": "Choosing between LFP and sodium-ion for stationary backup power? Compare cost per cycle, temperature range, cycle life, and supply chain risk to pick the right chemistry.",
+  "datePublished": "2026-05-12",
+  "dateModified": "2026-05-12",
+  "author": { "@type": "Organization", "name": "Auravolt" },
+  "publisher": { "@type": "Organization", "name": "Auravolt", "logo": { "@type": "ImageObject", "url": "https://auravolt.ai/images/symbol-dark.svg" } },
+  "mainEntityOfPage": "https://auravolt.ai/lfp-vs-sodium-ion-stationary-backup.html"
+}
+</script>
 </head>
-<body data-page="defense">
+<body data-page="resources">
 
 <!-- ============================================================
      SITE HEADER — shared across all pages.
@@ -43,7 +56,7 @@
           <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
         </ul>
       </li>
-      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li><a href="resources.html" data-nav="resources" class="active">Resources</a></li>
       <li class="has-drop">
         <a href="about.html" data-nav-group="company">Company</a>
         <ul class="drop">
@@ -94,55 +107,47 @@
 <section class="page-hero on-dark">
   <div class="container">
     <img class="ph-mark" src="images/symbol-white.svg" alt="" aria-hidden="true">
-    <div class="crumb"><a href="index.html">Home</a> / Industries / Defense</div>
-    <h1 class="display">Power for the <span class="volt">mission edge</span></h1>
-    <p class="lede">Soldier-worn systems, unmanned platforms, and field communications demand power that survives rough handling, temperature extremes, and unforgiving logistics.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-solid" href="contact.html">Start a conversation</a>
-    </div>
+    <div class="crumb"><a href="index.html">Home</a> / <a href="resources.html">Resources</a> / LFP vs. Sodium-Ion</div>
+    <h1 class="display">LFP vs. sodium-ion for <span class="volt">stationary backup</span></h1>
+    <p class="lede">A practical decision framework: cost per cycle, float behavior, temperature windows, and when energy density actually matters.</p>
   </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="eyebrow">The challenge</div>
-      <h2 class="display">Every device, a different battery</h2>
-      <p>Field units carry a zoo of incompatible packs, chargers, and connectors. Weight goes up, interoperability goes down, and resupply becomes its own mission. A common integration layer changes that math.</p>
-    </div>
-    <div class="cards-3">
-      <div class="l-card reveal">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div>
-        <h3>Ruggedized by requirement</h3>
-        <p>Vibration, shock, humidity, and wide-temperature operation treated as design inputs, not afterthoughts.</p>
-      </div>
-      <div class="l-card reveal">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7zM12 2v3M12 19v3M2 12h3M19 12h3"/></svg></div>
-        <h3>One platform, many devices</h3>
-        <p>Standardized packs and interfaces across radios, sensors, and unmanned systems simplify training and resupply.</p>
-      </div>
-      <div class="l-card reveal">
-        <div class="icon"><svg viewBox="0 0 24 24"><path d="M4 19h16M6 16V9M11 16V5M16 16v-6M21 16v-3"/></svg></div>
-        <h3>Readiness you can query</h3>
-        <p>State-of-health telemetry turns "is this pack good?" from a guess into a data point before the mission, not during it.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="container legal">
+    <div class="updated">Blog · Published May 12, 2026 · 7 min read</div>
 
-<section class="bare" style="padding-top:0">
-  <div class="container">
-    <div class="cta-band on-dark reveal">
-      <img class="watermark" src="images/symbol-white.svg" alt="" aria-hidden="true">
-      <div>
-        <div class="eyebrow">Defense</div>
-        <h2 class="display">Discuss your program requirements</h2>
-        <p>We work with primes and integrators on power architectures for fielded systems. Reach out to start a scoping conversation.</p>
-      </div>
-      <div class="actions">
-        <a class="btn btn-solid" href="contact.html">Get in touch</a>
-      </div>
-    </div>
+    <p>If you're specifying a battery for stationary backup — telecom cabinets, UPS systems, microgrids, data center reserve power — you'll eventually land on a choice between lithium iron phosphate (LFP) and sodium-ion. Both are having a moment. Neither is automatically "better." The right answer depends on which constraints actually bind for your application, and that's where a lot of chemistry comparisons go wrong: they lead with energy density, which is usually the least important number on this particular spec sheet.</p>
+
+    <h2>Start with the constraint that actually matters: cost per cycle</h2>
+    <p>Stationary backup isn't weight-constrained or volume-constrained the way a vehicle or a handheld device is. A rack has room. What it doesn't have is an unlimited budget, and the number that matters isn't cost per kWh at purchase — it's cost per cycle delivered over the asset's service life.</p>
+    <p>LFP is the mature option here. Manufacturing scale is enormous, the supply chain is well understood, and cycle life at moderate depth-of-discharge routinely runs 3,000–6,000 cycles before capacity fades below a useful threshold. That maturity shows up as predictable, competitive pricing.</p>
+    <p>Sodium-ion is younger. Cell-level pricing is improving quickly because the raw materials — sodium, iron, manganese — are abundant and don't carry lithium's price volatility or geographic concentration risk. For a program that will still be buying cells in five years, that supply-side stability is a real hedge, even if today's per-cell price isn't yet undercutting LFP at scale.</p>
+
+    <h2>Temperature performance: where sodium-ion earns its keep</h2>
+    <p>This is the spec where sodium-ion has a genuine, not marginal, advantage. LFP's usable capacity and charge acceptance drop meaningfully in cold weather, and charging below freezing risks lithium plating if the BMS isn't managing it carefully. Sodium-ion cells tolerate a wider temperature band with less performance penalty, and several formulations handle low-temperature discharge noticeably better.</p>
+    <p>If your deployment is outdoor telecom cabinets in a cold climate, or backup power in an unconditioned enclosure, this single factor can outweigh everything else on this list. If your packs live in a temperature-controlled data center, it's close to irrelevant.</p>
+
+    <h2>Energy density: usually a red herring for this use case</h2>
+    <p>LFP still beats sodium-ion on volumetric and gravimetric energy density, and that gap will likely persist for a while. For stationary backup, ask honestly whether that matters. If you have a dedicated equipment room or an outdoor cabinet with room to spare, a chemistry that needs 15–20% more volume for the same kWh is a rounding error in your site plan — not a disqualifier. Energy density earns its importance in mobile and portable applications, where every liter and kilogram is fought over. Don't import that priority into a stationary spec by habit.</p>
+
+    <h2>Cycle life and calendar life aren't the same question</h2>
+    <p>Cycle life tells you how many charge/discharge cycles a cell tolerates before it degrades past a threshold. Calendar life tells you how long it lasts sitting mostly idle, which is what most backup power actually does — floating at or near full charge, waiting for an outage. Both chemistries handle float duty reasonably well, but float voltage management, not chemistry alone, is usually the bigger lever on calendar life. This is a BMS and charge-profile problem as much as a cell-selection problem, and it's easy to undersell in a chemistry comparison.</p>
+
+    <h2>Safety profile</h2>
+    <p>Both chemistries are thermally stable relative to nickel-rich lithium formulations (NMC, NCA) and both have a strong track record in stationary applications. Neither eliminates the need for proper thermal design, cell balancing, and protection circuitry — a good chemistry choice doesn't substitute for a well-engineered pack.</p>
+
+    <h2>A decision framework, not a verdict</h2>
+    <ul class="list-check">
+      <li>Deployed in cold or uncontrolled ambient temperatures → weight this toward sodium-ion</li>
+      <li>Space-constrained enclosure where every liter counts → weight this toward LFP</li>
+      <li>Long-horizon program sensitive to raw-material supply risk → weight this toward sodium-ion</li>
+      <li>Need cells today from an established, high-volume supply chain → weight this toward LFP</li>
+      <li>Uncertain which will win → design the pack interface so you don't have to guess now</li>
+    </ul>
+    <p>That last point is the one we come back to most often. The chemistries best suited to stationary backup are still evolving, and the honest answer to "which one should we commit to" is frequently "we shouldn't have to yet." A pack and BMS designed around a cell-agnostic interface lets you qualify either chemistry — or requalify later when the calculus shifts — without a product redesign. That's the case we make in more detail in <a href="the-case-for-battery-integration.html">our piece on the battery integration layer</a>.</p>
+
+    <div class="notice">Auravolt designs packs and BMS platforms that support both LFP and sodium-ion cells behind the same interface, so your product isn't locked into this decision. See how the <a href="technology.html">Integration Core</a> handles chemistry swaps without touching your product design, or <a href="contact.html">talk to an engineer</a> about your specific backup application.</div>
   </div>
 </section>
 </main>

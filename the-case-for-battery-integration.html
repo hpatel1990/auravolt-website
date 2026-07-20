@@ -3,13 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resources — Auravolt</title>
-<meta name="description" content="Engineering write-ups and technical white papers on battery integration, cell chemistry selection, state of health, and telemetry-first pack design.">
+<title>The Case for a Battery Integration Layer — Auravolt</title>
+<meta name="description" content="Why decoupling battery chemistry from product design lowers lifetime cost and de-risks your supply chain. A technical case for the battery integration layer model.">
 <link rel="icon" type="image/svg+xml" href="images/symbol-dark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Case for a Battery Integration Layer",
+  "description": "Why decoupling battery chemistry from product design lowers lifetime cost and de-risks your supply chain. A technical case for the battery integration layer model.",
+  "datePublished": "2026-06-22",
+  "dateModified": "2026-06-22",
+  "author": { "@type": "Organization", "name": "Auravolt" },
+  "publisher": { "@type": "Organization", "name": "Auravolt", "logo": { "@type": "ImageObject", "url": "https://auravolt.ai/images/symbol-dark.svg" } },
+  "mainEntityOfPage": "https://auravolt.ai/the-case-for-battery-integration.html"
+}
+</script>
 </head>
 <body data-page="resources">
 
@@ -43,7 +56,7 @@
           <li><a href="commercial.html" data-nav="commercial">Commercial</a></li>
         </ul>
       </li>
-      <li><a href="resources.html" data-nav="resources">Resources</a></li>
+      <li><a href="resources.html" data-nav="resources" class="active">Resources</a></li>
       <li class="has-drop">
         <a href="about.html" data-nav-group="company">Company</a>
         <ul class="drop">
@@ -94,45 +107,54 @@
 <section class="page-hero on-dark">
   <div class="container">
     <img class="ph-mark" src="images/symbol-white.svg" alt="" aria-hidden="true">
-    <div class="crumb"><a href="index.html">Home</a> / Resources</div>
-    <h1 class="display">Notes from the <span class="volt">bench</span></h1>
-    <p class="lede">Engineering write-ups and deeper technical papers on battery integration, chemistry selection, and pack design.</p>
+    <div class="crumb"><a href="index.html">Home</a> / <a href="resources.html">Resources</a> / Battery Integration Layer</div>
+    <h1 class="display">The case for a <span class="volt">battery integration layer</span></h1>
+    <p class="lede">A longer technical argument: why decoupling chemistry from product design lowers lifetime cost and derisks supply.</p>
   </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="res-tabs reveal" role="tablist" aria-label="Filter resources">
-      <button class="res-tab active" data-filter="all">All</button>
-      <button class="res-tab" data-filter="blog">Blog</button>
-      <button class="res-tab" data-filter="whitepaper">White papers</button>
-    </div>
-    <div class="res-grid" id="resGrid">
-      <a class="res-card reveal" href="lfp-vs-sodium-ion-stationary-backup.html" data-cat="blog">
-        <span class="cat">Blog</span>
-        <h3>LFP vs. sodium-ion for stationary backup</h3>
-        <p>A practical decision framework: cost per cycle, float behavior, temperature windows, and when energy density actually matters.</p>
-        <span class="date">May 12, 2026</span>
-      </a>
-      <a class="res-card reveal" href="battery-state-of-health-explained.html" data-cat="blog">
-        <span class="cat">Blog</span>
-        <h3>What state-of-health actually tells you (and what it doesn't)</h3>
-        <p>Demystifying SoH estimation methods, their error bars, and how to use them for replacement planning.</p>
-        <span class="date">June 3, 2026</span>
-      </a>
-      <a class="res-card reveal" href="the-case-for-battery-integration.html" data-cat="whitepaper">
-        <span class="cat">White paper</span>
-        <h3>The case for a battery integration layer</h3>
-        <p>A longer technical argument: why decoupling chemistry from product design lowers lifetime cost and derisks supply.</p>
-        <span class="date">June 22, 2026</span>
-      </a>
-      <a class="res-card reveal" href="telemetry-first-pack-design.html" data-cat="whitepaper">
-        <span class="cat">White paper</span>
-        <h3>Telemetry-first pack design</h3>
-        <p>How designing for data from day one changes warranty economics and unlocks predictive maintenance.</p>
-        <span class="date">July 8, 2026</span>
-      </a>
-    </div>
+  <div class="container legal">
+    <div class="updated">White paper · Published June 22, 2026 · 9 min read</div>
+
+    <p>Most products power design decisions the same way: pick a cell, design the pack and BMS around it, and ship. It works, until the chemistry you picked gets superseded, the supplier raises prices or exits the category, or a customer segment needs a variant your architecture can't accommodate without a rebuild. At that point, the battery decision you made once at the start of the product's life becomes a constraint you're stuck with for the rest of it.</p>
+
+    <h2>The traditional model bakes the battery into the product</h2>
+    <p>When cell chemistry, pack mechanics, BMS firmware, and product enclosure are all designed together as one inseparable unit, every one of those pieces becomes load-bearing for the others. Swapping to a better-performing or lower-cost cell later doesn't mean swapping a component — it means requalifying the pack, potentially redesigning the mechanical envelope, rewriting BMS firmware tuned to the old cell's voltage curve and thermal behavior, and rerunning safety certification. That's not a part change. That's a second product development cycle, and most teams that have been through it once try hard not to do it twice.</p>
+
+    <h2>What actually creates the lock-in</h2>
+    <p>Three things typically get coupled that don't need to be:</p>
+    <ul>
+      <li><strong>Mechanical fit:</strong> the pack's physical envelope is often sized precisely to one cell format, with no tolerance for a different form factor.</li>
+      <li><strong>Firmware tuning:</strong> protection thresholds, balancing algorithms, and charge curves are frequently hard-coded to one chemistry's voltage and thermal profile rather than parameterized.</li>
+      <li><strong>Qualification effort:</strong> safety and reliability testing is performed against one specific cell, and most of that effort doesn't transfer automatically to a different one.</li>
+    </ul>
+    <p>None of these couplings are inherent to building a battery-powered product. They're a consequence of designing pack, firmware, and mechanics as a single monolith instead of as separable layers with defined interfaces.</p>
+
+    <h2>The integration layer model</h2>
+    <p>An integration layer separates the battery decision into distinct layers, each of which can change independently:</p>
+    <ol>
+      <li><strong>Cell interface</strong> — mechanical and electrical adaptation for whichever chemistry and format fits the application, isolated from the rest of the product.</li>
+      <li><strong>Power and protection hardware</strong> — monitoring, balancing, disconnects, and thermal management engineered to a defined envelope rather than one specific cell.</li>
+      <li><strong>Firmware and controls</strong> — state estimation, charging logic, and protection profiles built on parameterized cell models rather than hard-coded assumptions.</li>
+      <li><strong>Data and API</strong> — telemetry and integration endpoints that stay constant even as what's inside the pack changes.</li>
+    </ol>
+    <p>The product only ever talks to the top of this stack — standard electrical and data interfaces. What chemistry sits underneath is, from the product's point of view, an implementation detail that can change without touching the product design.</p>
+
+    <h2>The economic argument</h2>
+    <p>This costs more up front. A parameterized, cell-agnostic architecture takes more engineering effort than hard-coding for one known cell, and it's fair to ask whether that premium is worth it. The answer depends on time horizon. For a product with a single production run and no planned successor, probably not — optimize for the cell you have. For a product line that will ship for years, across multiple cell generations, the calculus flips:</p>
+    <ul class="list-check">
+      <li>One qualification effort gets reused across product lines and cell generations instead of repeated from scratch each time</li>
+      <li>Supply-chain risk drops because you're not single-sourced to one chemistry or supplier</li>
+      <li>You can adopt a better or cheaper cell as it becomes available instead of being stuck with the one you originally qualified</li>
+      <li>Field-updatable firmware means protection and charging improvements ship without a hardware recall</li>
+    </ul>
+    <p>The integration layer's engineering cost is paid once and amortizes across every product generation and every cell swap that follows. The monolithic approach pays its equivalent cost — full requalification — every single time.</p>
+
+    <h2>What this doesn't mean</h2>
+    <p>A cell-agnostic architecture isn't a promise that any cell drops in with zero effort — physics doesn't work that way, and a genuinely different chemistry still needs engineering attention at the interface layer. What it means is that the effort required is bounded and predictable, concentrated at defined interface points instead of spread invisibly through mechanical, firmware, and certification work that has to be untangled from scratch. It also isn't free: teams considering this approach should weigh the upfront complexity against their actual product roadmap, not adopt it reflexively. The right test is simple — will this product line still exist, and still need a battery, in three to five years? If yes, the case for an integration layer gets stronger every year past that point.</p>
+
+    <div class="notice">The Auravolt Integration Core is built around exactly this separation — see the <a href="technology.html">full architecture</a>, read how it applies to <a href="product-manufacturers.html">product manufacturers</a> and <a href="battery-producers.html">battery producers</a> specifically, or <a href="contact.html">talk to an engineer</a> about your product.</div>
   </div>
 </section>
 </main>
