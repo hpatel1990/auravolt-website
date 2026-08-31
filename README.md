@@ -1,7 +1,7 @@
 # Auravolt Website
 
 Marketing website for **Auravolt Corp.** — custom battery integration
-today, AI-driven energy intelligence next.
+today, Programmable voltage architecture next.
 
 Plain HTML, CSS, and vanilla JavaScript. No build step, no frameworks,
 no dependencies. Clone it, open it, edit it.
