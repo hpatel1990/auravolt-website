@@ -348,6 +348,9 @@ section.bare{margin:0;padding:5.2rem 0;border-radius:0;overflow:visible;backgrou
 .form textarea{min-height:130px;resize:vertical}
 .form .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .form .fine{font-size:.78rem;color:#9AA8A3}
+.form .hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.form .form-status{font-size:.86rem;font-weight:600;min-height:1.2em;color:var(--volt-deep)}
+.form .form-status.error{color:#C6402F}
 .contact-info h3{font-size:1.05rem;margin:1.6rem 0 .5rem}
 .contact-info p{color:var(--slate);font-size:.96rem}
 .contact-info a{color:var(--volt-deep);font-weight:600}
