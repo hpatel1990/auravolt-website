@@ -29,14 +29,12 @@ const ctaTrigger = document.getElementById('ctaTrigger');
 const ctaOverlay = document.getElementById('ctaOverlay');
 if (ctaTrigger && ctaOverlay) {
   const ctaForm = document.getElementById('ctaForm');
-  const ctaLabel = ctaTrigger.textContent;
   const openCta = () => {
     ctaOverlay.classList.add('open');
     ctaOverlay.setAttribute('aria-hidden', 'false');
     ctaTrigger.setAttribute('aria-expanded', 'true');
     ctaTrigger.setAttribute('aria-label', 'Close');
     ctaTrigger.classList.add('is-open');
-    ctaTrigger.innerHTML = '&times;';
     document.body.classList.add('cta-open');
     document.body.style.overflow = 'hidden';
   };
@@ -46,7 +44,6 @@ if (ctaTrigger && ctaOverlay) {
     ctaTrigger.setAttribute('aria-expanded', 'false');
     ctaTrigger.removeAttribute('aria-label');
     ctaTrigger.classList.remove('is-open');
-    ctaTrigger.textContent = ctaLabel;
     document.body.classList.remove('cta-open');
     document.body.style.overflow = '';
   };
@@ -93,6 +90,29 @@ tabs.forEach(tab => tab.addEventListener('click', () => {
     card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
   });
 }));
+
+/* ---------- Job apply fallback (copy email + toast, in case no mail client is configured) ---------- */
+const applyLinks = document.querySelectorAll('.job, .apply-fallback');
+if (applyLinks.length) {
+  let toast, toastTimer;
+  const showToast = msg => {
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'apply-toast';
+      toast.setAttribute('role', 'status');
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    requestAnimationFrame(() => toast.classList.add('show'));
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 6000);
+  };
+  applyLinks.forEach(link => link.addEventListener('click', () => {
+    const email = link.getAttribute('href').replace('mailto:', '').split('?')[0];
+    if (navigator.clipboard) navigator.clipboard.writeText(email).catch(() => {});
+    showToast(`Opening your email app — if nothing happens, email ${email} directly (address copied to your clipboard).`);
+  }));
+}
 
 /* ---------- Contact form (demo — wire to a real handler before launch) ---------- */
 const cform = document.getElementById('contactForm');
