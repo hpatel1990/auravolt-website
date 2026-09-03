@@ -7,11 +7,60 @@
    - highlighting the current page in the nav
    - scroll-reveal animations
    - Resources page filter tabs
-   - demo contact form handler
+   - "Get in touch" and contact-page form submission (Web3Forms)
    You rarely need to edit this file. If you add a page, just
    set <body data-page="your-page"> and (if it belongs to a
    dropdown) add it to NAV_GROUPS below.
    ============================================================ */
+
+/* ---------- Form submission (Web3Forms) ----------
+   Submissions are emailed to connect@auravolt.ai via Web3Forms
+   (https://web3forms.com — no backend needed). To rotate the key,
+   generate a new one at web3forms.com and swap it in below. */
+const WEB3FORMS_ACCESS_KEY = '5310c06e-d1ee-44fa-b5ef-ce22429a5578';
+
+async function submitToWeb3Forms(form, subject) {
+  const btn = form.querySelector('button[type=submit]');
+  const statusEl = form.querySelector('.form-status');
+  const originalLabel = btn.textContent;
+  const setStatus = (msg, isError) => {
+    if (!statusEl) return;
+    statusEl.textContent = msg;
+    statusEl.classList.toggle('error', !!isError);
+  };
+
+  // Honeypot: bots fill every field, including hidden ones. Real visitors never touch this.
+  const honeypot = form.querySelector('input[name="botcheck"]');
+  if (honeypot && honeypot.checked) return;
+
+  const data = new FormData(form);
+  data.append('access_key', WEB3FORMS_ACCESS_KEY);
+  data.append('subject', subject);
+  data.append('from_name', 'Auravolt website');
+  data.delete('botcheck');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  setStatus('');
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: data
+    });
+    const json = await res.json();
+    if (!res.ok || !json.success) throw new Error(json.message || 'Submission failed');
+    btn.textContent = 'Message sent ✓';
+    setStatus("Thanks — we'll get back to you within two business days.");
+    form.reset();
+    setTimeout(() => { btn.disabled = false; btn.textContent = originalLabel; }, 4000);
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = originalLabel;
+    setStatus('Something went wrong sending that — please email connect@auravolt.ai directly.', true);
+  }
+}
 
 /* ---------- Sticky nav shadow ---------- */
 const bar = document.getElementById('topbar');
@@ -54,7 +103,7 @@ if (ctaTrigger && ctaOverlay) {
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && ctaOverlay.classList.contains('open')) closeCta(); });
   ctaForm.addEventListener('submit', e => {
     e.preventDefault();
-    ctaForm.querySelector('button[type=submit]').textContent = 'Message sent ✓ (demo)';
+    submitToWeb3Forms(ctaForm, 'New inquiry — Auravolt "Get in touch" overlay');
   });
 }
 
@@ -114,9 +163,9 @@ if (applyLinks.length) {
   }));
 }
 
-/* ---------- Contact form (demo — wire to a real handler before launch) ---------- */
+/* ---------- Contact page form ---------- */
 const cform = document.getElementById('contactForm');
 if (cform) cform.addEventListener('submit', e => {
   e.preventDefault();
-  cform.querySelector('button[type=submit]').textContent = 'Message sent \u2713 (demo)';
+  submitToWeb3Forms(cform, 'New inquiry — Auravolt contact page');
 });
